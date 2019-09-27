@@ -4,69 +4,10 @@ in portuguese.
 Accepts ranges from -99 999 to 99 999.
 """
 
-SUFIXES = (
-    '',
-    'mil'
-)
-
-ONES = (
-    '',
-    "um",
-    "dois",
-    "três",
-    "quatro",
-    "cinco",
-    "seis",
-    "sete",
-    "oito",
-    "nove"
-)
-
-AFTER_TEN = (
-    "dez",
-    "onze",
-    "doze",
-    "treze",
-    "quatorze",
-    "quinze",
-    "dezesseis",
-    "dezessete",
-    "dezoito",
-    "dezenove"
-)
-
-TENS = (
-    '',
-    '',
-    "vinte",
-    "trinta",
-    "quarenta",
-    "cinquenta",
-    "sessenta",
-    "setenta",
-    "oitenta",
-    "noventa",
-)
-
-HUNDREDS = (
-    '',
-    'cento',
-    'duzentos',
-    'trezentos',
-    'quatrocentos',
-    'quinhentos',
-    'seiscentos',
-    'setecentos',
-    'oitocentos',
-    'novecentos'
-)
-
-CARDINAL_MATRIX = (
-    ONES,
-    AFTER_TEN,
-    TENS,
-    HUNDREDS
-)
+# # Internal Imports
+from config import MAX_RANGE
+from .cardinal_names import CARDINAL_MATRIX
+from .cardinal_names import SUFIXES
 
 
 def to_cardinal_trio(trio: str):
@@ -126,8 +67,9 @@ def to_cardinal_number(number: int):
     if not isinstance(number, int) or isinstance(number, bool):
         raise TypeError("The number must be passed as a integer")
 
-    if abs(number) > 99999:
-        raise ValueError("The input value must be between -99999 and 99999")
+    if abs(number) > MAX_RANGE:
+        raise ValueError(
+            f"The input value must be between -{MAX_RANGE} and {MAX_RANGE}")
 
     sign = 'menos' if number < 0 else ''
 
@@ -139,13 +81,11 @@ def to_cardinal_number(number: int):
         slice_start = -3*(1+i)
         slice_stop = -3*i if i != 0 else None
         trio = number_str[slice_start:slice_stop]
-        # trio_int = int(trio)
         if trio == '1' and i == 1:
             cardinal_number = SUFIXES[i] + '_' + cardinal_number
         elif trio != '000':
             cardinal_number = to_cardinal_trio(trio) + ' ' \
-                + SUFIXES[i] + '_' \
-                + cardinal_number
+                + SUFIXES[i] + '_' + cardinal_number
 
     cardinal_number = cardinal_number.strip('_ ').replace('_', ' e ')
 
