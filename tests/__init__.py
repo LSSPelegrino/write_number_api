@@ -1,6 +1,6 @@
 ''' 
 Call all tests on the command line at project root using:
-    $ python -m unittest tests 
+    $ python -m unittest tests
 
 '''
 
