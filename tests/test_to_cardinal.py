@@ -1,5 +1,7 @@
 """
-Test cases to the 'to_cardinal' module
+Test cases to the 'to_cardinal' module.
+Call these tests on the command line at project root using:
+    $ python -m unittest tests.test_to_cardinal
 """
 # # Standard Modules
 import unittest
@@ -90,7 +92,9 @@ class TestToCardinalTrio(unittest.TestCase):
         Tests the output of the function
         """
         for pair in self.good_value_pairs:
-            self.assertEqual(to_cardinal_trio(pair[0]), pair[1])
+            output = to_cardinal_trio(pair[0])
+            self.assertEqual(output, pair[1],
+                             f"{pair[0]} should be {pair[1]}, not {output}")
 
     def test_values(self):
         """
@@ -258,7 +262,9 @@ class TestToCardinalNumber(unittest.TestCase):
         Tests the output of the function
         """
         for pair in self.good_value_pairs:
-            self.assertEqual(to_cardinal_number(pair[0]), pair[1])
+            output = to_cardinal_number(pair[0])
+            self.assertEqual(output, pair[1],
+                             f"{pair[0]} should be {pair[1]}, not {output}")
 
     def test_values(self):
         """

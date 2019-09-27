@@ -1,6 +1,6 @@
 """
 Functions to translate an int number to the corresponding cardinal numerals
-in portuguese. 
+in portuguese.
 Accepts ranges from -99 999 to 99 999.
 """
 

@@ -1,5 +1,8 @@
-''' Call test on command line at project root using
-    $ python -m unittest cardinals.tests '''
+''' 
+Call all tests on the command line at project root using:
+    $ python -m unittest tests 
+
+'''
 
 # # Internal Modules
 from .test_to_cardinal import TestToCardinalNumber
