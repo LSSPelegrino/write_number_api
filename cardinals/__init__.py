@@ -1,1 +1,6 @@
-__all__ = ["to_cardinal_number"]
+"""
+Package with functions responsible for writing the cardinal representation
+"""
+
+# # Internal Modules
+from .to_cardinal import to_cardinal_number

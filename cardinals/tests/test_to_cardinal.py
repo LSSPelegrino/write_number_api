@@ -1,9 +1,12 @@
-''' Call test on command line at project root using
-    $ python -m unittest cardinals.tests.test_to_cardinal '''
-
+"""
+Test cases to the 'to_cardinal' module
+"""
+# # Standard Modules
 import unittest
+
+# # Internal Modules
+from cardinals import to_cardinal_number
 from cardinals.to_cardinal import to_cardinal_trio
-from cardinals.to_cardinal import to_cardinal_number
 
 
 class TestToCardinalTrio(unittest.TestCase):
