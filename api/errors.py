@@ -4,10 +4,11 @@ Implement API error calls
 
 # # 3rd Party Modules
 from flask import jsonify
-from werkzeug import HTTP_STATUS_CODES
+from werkzeug.http import HTTP_STATUS_CODES
 
 
-def error_response(status_code, message=None):
+def error_response(status_code: int,
+                   message=None):
     """
     Implements error responses
     """
