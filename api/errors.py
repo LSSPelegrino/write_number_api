@@ -15,9 +15,9 @@ def error_response(status_code: int,
     payload = {'error': HTTP_STATUS_CODES.get(status_code, 'Unknown error')}
     if message:
         payload['message'] = message
-    respose = jsonify(payload)
-    respose.status_code = status_code
-    return respose
+    response = jsonify(payload)
+    response.status_code = status_code
+    return response
 
 
 def bad_request(message):

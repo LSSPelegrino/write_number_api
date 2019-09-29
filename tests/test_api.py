@@ -72,6 +72,11 @@ class TestApiCalls(TestCase):
             data = json.loads(response_value.data)
             self.assertEqual(data['extenso'], f'{pair[1]}')
 
+        # Tests trailing zeroes
+        response_value = self.app.get('000000999')
+        data = json.loads(response_value.data)
+        self.assertEqual(data['extenso'], 'novecentos e noventa e nove')
+
     def test_values(self):
         """
         Tests the API for bad values

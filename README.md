@@ -31,19 +31,25 @@ Action  | HTTP Verb |URL Path       | Description
 :------:|:---------:|---------------|---
 Read    |```GET```  |```/{number}```|URL to read number in cardinal representation
 
-Usage examples:
+Usage examples, with HTTPie:
 
 ```bash
-$ curl http://localhost:3000/1
-{"extenso":"um"}
+$ HTTP GET http://localhost:3000/1
+{
+    "extenso": "um"
+}
 ```
 
 ```bash
-$ curl http://localhost:3000/-1042
-{"extenso":"menos mil e quarenta e dois"}
+$ HTTP GET http://localhost:3000/-1042
+{
+    "extenso": "menos mil e quarenta e dois"
+}
 ```
 
 ```bash
-$ curl http://localhost:3000/94587
-{"extenso":"noventa e quatro mil e quinhentos e oitenta e sete"}  
+$ HTTP GET http://localhost:3000/94587
+{
+    "extenso": "noventa e quatro mil e quinhentos e oitenta e sete"
+}  
 ```
