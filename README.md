@@ -2,13 +2,13 @@
 ### API to translate an integer number into the cardinal representation in portuguese. 
 ### The API supports numbers from -99999 to 99999.
 
-## Setup
 if you'd like to run the development server as an docker container, use the following command:
 ```bash
 $ docker run -p 3000:5000 lsspelegrino/writenumberapi:v0.1
 ```
 [Repository link on Dockerhub](https://hub.docker.com/r/lsspelegrino/writenumberapi)
 
+## Setup
 
 Prerequisites:
 * Python 3.7
@@ -26,9 +26,9 @@ With a virtual enviroment activated, install the requirements running the follow
 ```
 After the installation is complete, run:
 ```bash 
-(venv) $ flask run
+(venv) $ flask run --port=3000
 ```
-The development server should be running on [localhost](127.0.0.1:5000).
+The development server should be running on [localhost](127.0.0.1:3000).
 
 ## API
 
