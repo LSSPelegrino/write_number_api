@@ -8,4 +8,3 @@ Call all tests on the command line at project root using:
 from .test_to_cardinal import TestToCardinalNumber
 from .test_to_cardinal import TestToCardinalTrio
 from .test_api import TestApiCalls
-# from .test_api import TestApiErrors
