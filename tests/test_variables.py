@@ -182,7 +182,7 @@ INT_VALUE_PAIRS = (
     (-99000, 'menos noventa e nove mil'),
     (-99900, 'menos noventa e nove mil e novecentos'),
     (-99990, 'menos noventa e nove mil e novecentos e noventa'),
-    (-99999, 'menos noventa e nove mil e novecentos e noventa e nove'),
+    (-99999, 'menos noventa e nove mil e novecentos e noventa e nove')
 )
 
 BAD_VALUES_STR = (

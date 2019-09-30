@@ -9,46 +9,12 @@ from unittest import TestCase
 
 # # 3rd Party Modules
 import json
-# from werkzeug.http import HTTP_STATUS_CODES
 
 # # Internal Modules
 import write_number_api as api_to_test
-# from api.errors import bad_request
-# from api.errors import error_response
 from .test_variables import INT_VALUE_PAIRS
 from .test_variables import BAD_VALUES_INT
 from .test_variables import BAD_TYPES_NO_INT
-
-
-# class TestApiErrors(TestCase):
-#     """
-#     Tests the api.errors module
-#     """
-#     def setUp(self):
-#         """
-#         Sets up the test variables
-#         """
-#         # api_to_test.app.testing = True
-#         # self.app = api_to_test.app.test_client()
-
-#     def test_output(self):
-#         """
-#         Tests the output of the errors functions
-#         """
-#         with api_to_test.app.app_context():
-#             for key, content in HTTP_STATUS_CODES.items():
-#                 response = error_response(key)
-#                 print(repr(response))
-#                 self.assertEqual(json.dumps(response.status_code), f'{key}')
-
-#     def test_values(self):
-#         """
-#         Test the input values of the errors functions
-#         """
-#         pass
-
-#     def test_types(self):
-#         pass
 
 
 class TestApiCalls(TestCase):
@@ -71,12 +37,12 @@ class TestApiCalls(TestCase):
             response_value = self.app.get(f'/{pair[0]}')
             data = json.loads(response_value.data)
             self.assertEqual(data['extenso'], f'{pair[1]}')
-        
+
         # Tests trailing zeroes
         response_value = self.app.get('000000999')
         data = json.loads(response_value.data)
         self.assertEqual(data['extenso'], 'novecentos e noventa e nove')
-        
+
 
     def test_values(self):
         """
