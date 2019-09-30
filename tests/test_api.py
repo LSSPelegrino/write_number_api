@@ -43,7 +43,6 @@ class TestApiCalls(TestCase):
         data = json.loads(response_value.data)
         self.assertEqual(data['extenso'], 'novecentos e noventa e nove')
 
-
     def test_values(self):
         """
         Tests the API for bad values
