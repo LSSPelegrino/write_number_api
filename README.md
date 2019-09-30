@@ -3,6 +3,13 @@
 ### The API supports numbers from -99999 to 99999.
 
 ## Setup
+if you'd like to run the development server as an docker container, use the following command:
+```bash
+$ docker run -p 3000:5000 lsspelegrino/writenumberapi:v0.1
+```
+[Repository link on Dockerhub](https://hub.docker.com/r/lsspelegrino/writenumberapi)
+
+
 Prerequisites:
 * Python 3.7
 
